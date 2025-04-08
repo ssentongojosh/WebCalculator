@@ -11,7 +11,7 @@ body {
 }
 
 .calculator {
-  width: 400px;
+  width: 350px;
   height: 500px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
@@ -20,7 +20,7 @@ body {
 }
 
 .grid-container {
-  min-width: 90%;
+  max-width: 350px;
   display: grid;
   grid-template-columns: repeat(4, 50);
   grid-template-rows: repeat(6, 50);
@@ -29,11 +29,11 @@ body {
 }
 
 .screen {
-  height: 50px;
+  height: 70px;
   background-color: darkolivegreen;
   grid-area: 1/1/2/5;
-  margin: 30px 0;
-  width: 100%;
+  margin: 20px 0;
+  max-width: 310px;
 }
 
 #clear,
@@ -135,4 +135,19 @@ body {
 
 #clear {
   grid-area: 2/4/3/5;
+}
+
+@font-face {
+  font-family: seven-segment;
+  src: url("./fonts/seven_segment/Seven\ Segment.ttf");
+  font-family: casio;
+  src: url("./fonts/casio-calculator-font/casio-calculator-font.ttf");
+}
+
+p.display {
+  font-family: casio;
+  font-size: large;
+  padding: 5px;
+  overflow-x: auto;
+  padding-bottom: 25px;
 }
