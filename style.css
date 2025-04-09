@@ -29,17 +29,18 @@ body {
 }
 
 .screen {
-  height: 70px;
+  height: 65px;
   background-color: darkolivegreen;
   grid-area: 1/1/2/5;
   margin: 20px 0;
   max-width: 310px;
+  position: relative;
+  margin-bottom: 40px;
 }
 
 #clear,
 #equal,
 .displayable {
-  /* box-shadow: 0 0 3px; */
   height: 60px;
   width: 70px;
   display: flex;
@@ -150,4 +151,40 @@ p.display {
   padding: 5px;
   overflow-x: auto;
   padding-bottom: 25px;
+  position: relative;
+}
+
+p.answer {
+  position: absolute;
+  background-color: darkolivegreen;
+  width: 100%;
+  bottom: -6px;
+  height: 35px;
+  font-family: casio;
+  font-size: large;
+  display: flex;
+  justify-content: flex-end;
+  overflow-x: auto;
+
+}
+
+p.cursor {
+  position: absolute;
+}
+
+p.display::after {
+  content: "|";
+  animation: blinkCursor 1s steps(1, start) infinite;
+}
+
+@keyframes blinkCursor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
